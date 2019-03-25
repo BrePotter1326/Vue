@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bre's HW Week 13</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+        <div id="countDown">
+            <div id="timer"v-if="timeVisible">{{minutes}}:{{seconds}}</div>
+            <button v-on:click="toggleTime()">Hide</button>
+            <h1 id="title">Welcome to {{ appName }}</h1>
+            <h3>Current time is {{ date }} </h3>
+            <!--<button v-on:click="showTime( new Date())">Show time</button>-->
+            <input type="text" v-model="searchTerm" placeholder="Search Bar...">
+            <button v-on:click="getMovies()">Search</button>
+            <h1>{{searchTerm}}</h1>
+            <div id="moviesArea" v-for="m in moviesArray">
+                <div class="title">{{ m.Title }}</div>
+            </div>
+        </div>
+
+    <!--<script src="scripts/vue.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="scripts/jquery-min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
