@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vue 2019A_ID290</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <div id="app">
+  <div id="search-wrapper">
+    <label>Search Title:</label>
+    <input type="text" v-model="keyword" placeholder="Search Title..." />
+  </div>
+  <div class="wrapper">
+    <div class="card" v-for="post on fliteredList">
+      <a v-bind:href="post.link" target="_blank">
+        <img v-bind:src="post.img" />
+        <small>Posted by {{post.author}}</small>
+        {{post.title}}
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!--<div id="app">
+  <input type="text" v-model="keyword"/> {{keyword}}
+ <div class='box' v-bind:style="{backgroundColor: keyword}"></div>
+<div class="box" v-bind:class="{ green: onOff, hotpink: !onOff }"></div>
+  <button v-oc:click="toggleOnOff()">Toggle</button>
+</div>-->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.9/vue.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>
