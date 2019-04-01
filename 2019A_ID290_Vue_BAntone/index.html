@@ -1,54 +1,35 @@
 <!DOCTYPE html>
-<html lang="en" >
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Vue 2019A_ID290</title>
-  
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-  
-      <link rel="stylesheet" href="css/style.css">
-
-  
+    <title>Bre's HW Week 13</title>
+    <link rel="stylesheet" href="styles/main.css">
 </head>
-
 <body>
+        <div id="countDown">
+            <div id="timer"v-if="timeVisible">{{hours}}:{{minutes}}:{{seconds}}</div>
+            <button v-on:click="toggleTime()">Hide</button>
+            <h1 id="title">Welcome to {{ appName }}</h1>
+            <!--<h3>Current time is {{ date }} </h3>-->
+            <button v-on:click="showTime( new Date())">Show time</button>
+            <input type="text" v-model="searchTerm" placeholder="Search Bar...">
+            <button v-on:click="getMovies()">Search</button>
+            <h1>{{searchTerm}}</h1>
+            <div id="moviesArea" v-for="m in moviesArray">
+                <div class="movie">
+                    <div class="title">{{ m.Title }}</div>
+                    <img v-if="m.Poster !='N/A'" v-bind:src="m.Poster">
+                    <div v-if="m.Poster == N/A">No Poster Found</div>
+                    <small class="m.Year"></samll>
+                </div>
+            </div>
+            <!--<ul>
+                <li v-for="name in arr">The name is: {{name}}</li>
+            </ul>-->
+        </div>
 
-  <div id="app">
-  <div id="search-wrapper">
-    <label>Search Title:</label>
-    <input type="text" v-model="keyword" placeholder="Search Title..." />
-  </div>
-  <div class="wrapper">
-    <div class="card" v-for="post on fliteredList">
-      <a v-bind:href="post.link" target="_blank">
-        <img v-bind:src="post.img" />
-        <small>Posted by {{post.author}}</small>
-        {{post.title}}
-      </a>
-    </div>
-  </div>
-</div>
-
-
-
-
-<!--<div id="app">
-  <input type="text" v-model="keyword"/> {{keyword}}
- <div class='box' v-bind:style="{backgroundColor: keyword}"></div>
-<div class="box" v-bind:class="{ green: onOff, hotpink: !onOff }"></div>
-  <button v-oc:click="toggleOnOff()">Toggle</button>
-</div>-->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.9/vue.min.js'></script>
-
-  
-
-    <script  src="js/index.js"></script>
-
-
-
-
+    <!--<script src="scripts/vue.min.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="scripts/jquery-min.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
-
 </html>
